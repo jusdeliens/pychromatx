@@ -12,6 +12,7 @@
 # https://creativecommons.org/licenses/by-nc-nd/3.0/ 
 
 def colorFromPercent(percent:float):
+    """Returns a RGB tuple from specified float percent from 0.0 (red) to 1.0 (magenta)"""
     LED_MAGENTA_THRESHOLD = 300.0/360.0
     LED_BLUE_THRESHOLD = 240.0/360.0
     LED_CYAN_THRESHOLD = 180.0/360.0
@@ -45,7 +46,8 @@ def colorFromPercent(percent:float):
         b = int(255.0 - 255.0 * (percent - LED_MAGENTA_THRESHOLD)  / (1.0-LED_MAGENTA_THRESHOLD))
     return (r,g,b)
 
-def RGBToHSL(r,g,b): 
+def RGBToHSL(r:int, g:int, b:int): 
+    """Convert the specified 8 bits r,g,b int from 0 to 255 value, to HSL tuple"""
     # Make r, g, and b fractions of 1
     r /= 255
     g /= 255
@@ -90,7 +92,8 @@ def RGBToHSL(r,g,b):
         l = 100
     return (h,s,l)
 
-def HSLToRGB(h,s,l):
+def HSLToRGB(h:int, s:int, l:int):
+    """Convert HSL int values to 8 bits RGB tuple fomr 0 to 255"""
     # Must be fractions of 1
     s /= 100.0
     l /= 100.0

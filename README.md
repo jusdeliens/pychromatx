@@ -1,4 +1,4 @@
-# pychromatx
+# PyChromatX
 Common tools for dealing with color processing 🎨
 
 ## 🧑‍💻 Author
